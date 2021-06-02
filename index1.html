@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div style="margin: 10px;"> <input type="text" id="num1"/></div>
+ <div style="margin: 10px;"> <input type="text" id="num2"/></div>
+   <div style="margin: 10px;"> 
+    <button onclick="sum()">+</button>
+    <button onclick="min()">-</button>
+    <button onclick="mult()">*</button>
+    <button onclick="divis()">/</button></div>
+   <div style="margin: 10px;" id="result"> </div>
+<script>
+
+let a,b; 
+let result = document.getElementById('result');
+
+function number(){
+a = document.getElementById('num1').value;
+b = document.getElementById('num2').value;
+}
+
+function sum() {
+number();
+result.innerHTML = (+a + +b);
+}
+ 
+
+function min() {
+  number();
+  result.innerHTML = (a - b);
+}
+
+function mult() {
+  number();
+  result.innerHTML = (a * b);
+}
+
+function divis() {
+  number();
+  if(b>0) {
+  result.innerHTML = (a / b);
+  }
+  else{
+    alert ("На 0 делить нельзя");
+  }
+}
+
+
+    </script>
+</body>
+</html>
