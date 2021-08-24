@@ -1,44 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+{
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+</style>
 </head>
 <body>
-    <label for="theme">Выберите тему: </label>
-<select id="theme">
-  <option value="white">Белая</option>
-  <option value="black">Тёмная</option>
-  <option value="blue">Синяя</option>
-</select>
 
-<h1>Это мой веб-сайт</h1>
-<script>
-let select = document.querySelector('select');
-let html = document.querySelector('html');
+<form action="/action_page.php">
+  <div class="container">
+    <h1>Register</h1>
+   
+    <hr>
 
-select.onchange = function() {
-    let choice = select.value;
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
 
-switch(choice) {
-    case 'black':
-    update('black','white');
-    break;
-    case 'white':
-    update('white','black');
-    break;
-    case 'blue':
-    update('blue','white');
-    break;
-    }
-}
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
-function update(bgColor, textColor) {
-  html.style.backgroundColor = bgColor;
-  html.style.color = textColor;
-}
-</script>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <hr>
+    
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+  
+  
+</form>
+
 </body>
 </html>
